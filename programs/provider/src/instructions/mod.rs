@@ -1,3 +1,2 @@
-pub mod initialize;
-
-pub use initialize::*;
+pub mod register;
+pub use register::*;

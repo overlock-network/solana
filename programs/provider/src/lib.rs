@@ -1,13 +1,11 @@
+#![allow(clippy::result_large_err)]
+use anchor_lang::prelude::*;
+use instructions::*;
+
 pub mod constants;
 pub mod error;
 pub mod instructions;
 pub mod state;
-
-use anchor_lang::prelude::*;
-
-pub use constants::*;
-pub use instructions::*;
-pub use state::*;
 
 declare_id!("BfHgyDmEcrmt2GyQ1ypLcopsKUJXp4zo86y3TnKffuLz");
 
@@ -15,7 +13,15 @@ declare_id!("BfHgyDmEcrmt2GyQ1ypLcopsKUJXp4zo86y3TnKffuLz");
 pub mod provider {
     use super::*;
 
-    pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
-        initialize::handler(ctx)
+    pub fn register_provider(
+        ctx: Context<RegisterProvider>,
+        name: String,
+        ip: String,
+        port: u16,
+        country: String,
+        environment_type: String,
+        availability: bool,
+    ) -> Result<()> {
+        register::register_provider(ctx, name, ip, port, country, environment_type, availability)
     }
 }
