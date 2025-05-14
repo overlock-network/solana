@@ -7,6 +7,7 @@ skip-lint = false
 
 [programs.localnet]
 environment = "F6MJX57V1LjRHxF6a7zbJGT8MyQfYAv8jrDZ8DnXpgtV"
+provider = "BfHgyDmEcrmt2GyQ1ypLcopsKUJXp4zo86y3TnKffuLz"
 
 [registry]
 url = "https://api.apr.dev"
